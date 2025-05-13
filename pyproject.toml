@@ -1,0 +1,15 @@
+[project]
+name = "fwrap"
+version = "0.1.0"
+description = "Wraps a figlet in code comments."
+readme = "README.md"
+requires_python = ">=3.7"
+dependencies = ["typer[all]"]
+
+[project.scripts]
+fwrap = "fwarp.cli:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
