@@ -6,6 +6,7 @@ COMMENT_CHARS_C = "//"
 COMMENT_CHARS_POUND = "#"
 COMMENT_CHARS_DASH = "--"
 
+# Dictionary to store all languages
 LANGUAGES = {}
 
 LanguageInfo = namedtuple(
@@ -51,6 +52,7 @@ LANGUAGES["lua"] = LanguageInfo(
     comment_chars=COMMENT_CHARS_DASH,
     multiline_comment_chars=MULTILINE_COMMENT_CHARS_LUA,
 )
+
 # SQL
 LANGUAGES["sql"] = LanguageInfo(
     has_multiline_comment_chars=True,
@@ -60,8 +62,6 @@ LANGUAGES["sql"] = LanguageInfo(
 
 
 def get_comment_chars(language: str, multiline: bool = False):
-    if multiline == True:
-        print("Multiline is set.")
 
     lang_info = LANGUAGES.get(language)
 
