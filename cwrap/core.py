@@ -1,4 +1,4 @@
-from languages import get_comment_chars
+from languages import LANGUAGES, get_comment_chars
 from pyfiglet import Figlet
 
 
@@ -30,3 +30,7 @@ def do_figlet(text: str, font: str, language, multiline: bool = False):
 
     if has_multiline_comment_chars == True and multiline == True:
         print(last_comment_chars)
+
+
+def get_languages():
+    return LANGUAGES

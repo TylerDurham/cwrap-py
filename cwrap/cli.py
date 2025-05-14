@@ -1,7 +1,12 @@
 from typing import Annotated
 
+import rich
 import typer
-from core import do_figlet
+from core import do_figlet, get_languages
+from rich.panel import Panel
+from rich.table import Table
+
+app = typer.Typer()
 
 
 def opt_font():
@@ -56,7 +61,22 @@ def opt_multiline():
     )
 
 
-def main(
+@app.command()
+def list_languages():
+    languages = get_languages()
+
+    table = Table("Language", "Multiline Comments?", box=None)
+
+    for key in languages:
+        hmcc = languages[key].has_multiline_comment_chars
+        row_style = "green" if hmcc else "yellow"
+        table.add_row(key, str(hmcc), style=row_style)
+
+    rich.print(Panel(title="Languages", renderable=table, border_style="bright_black"))
+
+
+@app.command()
+def figlet(
     text: str,
     font: Annotated[str, opt_font()] = "cybermedium",
     language: Annotated[str, opt_language()] = "python",
@@ -68,4 +88,4 @@ def main(
 
 
 if __name__ == "__main__":
-    typer.run(main)
+    app()

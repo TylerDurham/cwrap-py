@@ -77,6 +77,10 @@ LANGUAGES["sql"] = LanguageInfo(
 )
 
 
+def get_languages():
+    return LANGUAGES
+
+
 def get_comment_chars(language: str, multiline: bool = False):
 
     lang_info = LANGUAGES.get(language)
