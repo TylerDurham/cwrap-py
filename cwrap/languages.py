@@ -2,6 +2,8 @@ from collections import namedtuple
 
 MULTILINE_COMMENT_CHARS_C = ["/*", "*/"]
 MULTILINE_COMMENT_CHARS_LUA = ["--[[", "]]"]
+MULTILINE_COMMENT_CHARS_HASKELL = ["{-", "-}"]
+MULTILINE_COMMENT_CHARS_HTML = ["<!--", "-->"]
 COMMENT_CHARS_C = "//"
 COMMENT_CHARS_POUND = "#"
 COMMENT_CHARS_DASH = "--"
@@ -51,6 +53,20 @@ LANGUAGES["lua"] = LanguageInfo(
     has_multiline_comment_chars=True,
     comment_chars=COMMENT_CHARS_DASH,
     multiline_comment_chars=MULTILINE_COMMENT_CHARS_LUA,
+)
+
+# Haskell
+LANGUAGES["haskell"] = LanguageInfo(
+    has_multiline_comment_chars=True,
+    comment_chars=COMMENT_CHARS_DASH,
+    multiline_comment_chars=MULTILINE_COMMENT_CHARS_HASKELL,
+)
+
+# HTML
+LANGUAGES["html"] = LanguageInfo(
+    has_multiline_comment_chars=True,
+    comment_chars=None,
+    multiline_comment_chars=MULTILINE_COMMENT_CHARS_HTML,
 )
 
 # SQL

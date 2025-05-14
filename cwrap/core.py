@@ -4,6 +4,14 @@ from pyfiglet import Figlet
 
 def do_figlet(text: str, font: str, language, multiline: bool = False):
 
+    # Force to lowercase
+    language = str.lower(language)
+    font = str.lower(font)
+
+    # HTML doesn't have single-line comments!
+    if language == "html":
+        multiline = True
+
     comment_chars, has_multiline_comment_chars = get_comment_chars(language, multiline)
     start_comment_chars = ""
     last_comment_chars = ""
