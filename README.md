@@ -25,6 +25,49 @@ pipx install .
 
 To remove, run `pipx uninstall cwrappy`.
 
+# Usage
+
+## Commands
+
+### Help
+
+Get help:
+
+``` shell
+cwrappy --help
+```
+
+### Programming Languages
+
+List supported languages:
+
+``` shell
+cwrappy list-languages
+```
+
+### Figlets
+
+Generate a simple comment wrapped figlet header:
+
+``` shell
+cwrappy figlet "Hello World"
+```
+
+The default figlet font is `cybermedium`.
+
+To generate a simple comment wrapped figlet header with a *specific figlet font*, use the `-f` or `--font` option:
+
+``` shell
+cwrappy figlet -f avatar "Hello World"
+```
+
+If the programming language supports it, you can specify the `-m` or `--multiline` option to wrap the figlet text in a multiline comment:
+
+``` shell
+cwrappy figlet -f avatar -m "Hello World"
+```
+
+
 # Local Development
 
 Clone the `repo`:
