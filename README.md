@@ -79,6 +79,24 @@ This will output:
 #                                                                
 ```
 
+You can also wrap with different programming languages:
+
+``` shell
+cwrappy figlet -l lua "UPDATE DB"
+```
+
+This will output:
+
+``` lua
+-- _  _ ___  ___  ____ ___ ____    ___ ____ ___  _    ____ 
+-- |  | |__] |  \ |__|  |  |___     |  |__| |__] |    |___ 
+-- |__| |    |__/ |  |  |  |___     |  |  | |__] |___ |___ 
+--                                                         
+```
+
+**Note:** You can run `cwrappy list-languages` to get a list of supported programming languages.
+
+
 If the programming language supports it, you can specify the `-m` or `--multiline` option to wrap the figlet text in a multiline comment:
 
 ``` shell
@@ -97,7 +115,6 @@ This will output:
 */
 
 ```
-
 
 # Local Development
 
