@@ -5,7 +5,7 @@ import typer
 from rich.panel import Panel
 from rich.table import Table
 
-from cwrap.core import do_figlet, get_languages
+from cwrappy.core import do_figlet, get_languages  # do_figlet, get_languages
 
 app = typer.Typer()
 

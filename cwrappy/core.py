@@ -1,6 +1,6 @@
 from pyfiglet import Figlet
 
-from cwrap.languages import LANGUAGES, get_comment_chars
+from cwrappy.languages import LANGUAGES, get_comment_chars
 
 
 def do_figlet(text: str, font: str, language, multiline: bool = False):
