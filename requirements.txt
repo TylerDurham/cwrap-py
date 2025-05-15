@@ -1,8 +1,10 @@
 click==8.1.8
+-e git+https://github.com/TylerDurham/cwrap-python.git@ddcd6a4b473f5fca66f448b16fb12e761c96f016#egg=cwrappy
 markdown-it-py==3.0.0
 mdurl==0.1.2
 pyfiglet==1.0.2
 Pygments==2.19.1
+pyperclip==1.9.0
 rich==14.0.0
 shellingham==1.5.4
 typer==0.15.3

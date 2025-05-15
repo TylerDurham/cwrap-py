@@ -47,6 +47,8 @@ cwrappy list-languages
 
 ### Figlets
 
+#### Basic Usage
+
 Generate a simple comment wrapped figlet header:
 
 ``` shell
@@ -62,6 +64,8 @@ This will output:
 ```
 
 **Note:** The default figlet font is `cybermedium`. The default language is `python`.
+
+#### Specifying a Figlet Font
 
 To generate a simple comment wrapped figlet header with a *specific figlet font*, use the `-f` or `--font` option:
 
@@ -79,10 +83,12 @@ This will output:
 #                                                                
 ```
 
+#### Specifying a Programming Language
+
 You can also wrap with different programming languages:
 
 ``` shell
-cwrappy figlet -l lua "UPDATE DB"
+cwrappy figlet -l lua "UPDATE TABLE"
 ```
 
 This will output:
@@ -96,6 +102,7 @@ This will output:
 
 **Note:** You can run `cwrappy list-languages` to get a list of supported programming languages.
 
+#### Multiline Comments
 
 If the programming language supports it, you can specify the `-m` or `--multiline` option to wrap the figlet text in a multiline comment:
 
@@ -114,6 +121,14 @@ This will output:
                                                                 
 */
 
+```
+
+#### Clipboard Support 
+
+You can place the generated text on the clipboard by specifying the `-c` option:
+
+``` shell
+cwrappy figlet "Hello, Clipboard" -c
 ```
 
 # Local Development
