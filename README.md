@@ -6,6 +6,21 @@
 # |___ |_|_| |  \ |  | |       |      |    |  |  | |__| | \| 
 #                                                            
 ```
+# Install
+
+Clone the `repo`:
+
+``` shell
+git clone https://github.com/TylerDurham/cwrap-python
+```
+
+I like to use `pipx`:
+
+``` shell
+pipx install .
+```
+
+To remove, run `pipx uninstall cwrap`.
 
 # Local Development
 

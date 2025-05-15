@@ -2,9 +2,10 @@ from typing import Annotated
 
 import rich
 import typer
-from core import do_figlet, get_languages
 from rich.panel import Panel
 from rich.table import Table
+
+from cwrap.core import do_figlet, get_languages
 
 app = typer.Typer()
 
@@ -87,5 +88,9 @@ def figlet(
     typer.echo(output)
 
 
-if __name__ == "__main__":
+def main():
     app()
+
+
+if __name__ == "__main__":
+    main()
