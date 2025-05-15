@@ -52,19 +52,50 @@ Generate a simple comment wrapped figlet header:
 ``` shell
 cwrappy figlet "Hello World"
 ```
+This will output:
 
-The default figlet font is `cybermedium`.
+``` python
+# _  _ ____ _    _    ____    _ _ _ ____ ____ _    ___  
+# |__| |___ |    |    |  |    | | | |  | |__/ |    |  \ 
+# |  | |___ |___ |___ |__|    |_|_| |__| |  \ |___ |__/ 
+#                                                       
+```
+
+**Note:** The default figlet font is `cybermedium`. The default language is `python`.
 
 To generate a simple comment wrapped figlet header with a *specific figlet font*, use the `-f` or `--font` option:
 
 ``` shell
 cwrappy figlet -f avatar "Hello World"
 ```
+This will output:
+
+``` python
+#  _     _____ _     _     ____    _      ____  ____  _     ____ 
+# / \ /|/  __// \   / \   /  _ \  / \  /|/  _ \/  __\/ \   /  _ \
+# | |_|||  \  | |   | |   | / \|  | |  ||| / \||  \/|| |   | | \|
+# | | |||  /_ | |_/\| |_/\| \_/|  | |/\||| \_/||    /| |_/\| |_/|
+# \_/ \|\____\\____/\____/\____/  \_/  \|\____/\_/\_\\____/\____/
+#                                                                
+```
 
 If the programming language supports it, you can specify the `-m` or `--multiline` option to wrap the figlet text in a multiline comment:
 
 ``` shell
-cwrappy figlet -f avatar -m "Hello World"
+cwrappy figlet -f avatar -l javascript -m "Hello World"
+```
+This will output:
+
+``` javascript
+/*
+  _     _____ _     _     ____    _      ____  ____  _     ____ 
+ / \ /|/  __// \   / \   /  _ \  / \  /|/  _ \/  __\/ \   /  _ \
+ | |_|||  \  | |   | |   | / \|  | |  ||| / \||  \/|| |   | | \|
+ | | |||  /_ | |_/\| |_/\| \_/|  | |/\||| \_/||    /| |_/\| |_/|
+ \_/ \|\____\\____/\____/\____/  \_/  \|\____/\_/\_\\____/\____/
+                                                                
+*/
+
 ```
 
 
