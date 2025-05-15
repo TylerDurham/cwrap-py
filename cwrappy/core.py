@@ -1,9 +1,21 @@
+# ____ ____ ____ ____  ___  _   _
+# |    |  | |__/ |___  |__]  \_/
+# |___ |__| |  \ |___ .|      |
+#
+
 from pyfiglet import Figlet
+from pyperclip import copy
 
 from cwrappy.languages import LANGUAGES, get_comment_chars
 
 
-def do_figlet(text: str, font: str, language, multiline: bool = False):
+def do_figlet(
+    text: str,
+    font: str,
+    language,
+    multiline: bool = False,
+    copy_to_clipboard: bool = False,
+):
 
     # Force to lowercase
     language = str.lower(language)
@@ -20,17 +32,24 @@ def do_figlet(text: str, font: str, language, multiline: bool = False):
     fig = Figlet(font=font)
     lines = fig.renderText(text).splitlines()
 
+    output = []
+
     if has_multiline_comment_chars == True and multiline == True:
         start_comment_chars = comment_chars[0]
         last_comment_chars = comment_chars[1]
-        print(start_comment_chars)
+        output.append(start_comment_chars)
         comment_chars = ""
 
     for line in lines:
-        print(f"{comment_chars} {line}")
+        output.append(f"{comment_chars} {line}")
 
     if has_multiline_comment_chars == True and multiline == True:
-        print(last_comment_chars)
+        output.append(last_comment_chars)
+
+    print("\n".join(output))
+
+    if copy_to_clipboard == True:
+        copy("\n".join(output))
 
 
 def get_languages():

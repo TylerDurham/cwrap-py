@@ -1,3 +1,8 @@
+# ____ _    _  ___  _   _
+# |    |    |  |__]  \_/
+# |___ |___ | .|      |
+#
+
 from typing import Annotated
 
 import rich
@@ -22,6 +27,7 @@ def opt_font():
     )
 
 
+# TODO: Get shell completion working.
 def opt_font_completion() -> []:
     """
     Get a list of fonts for completion.
@@ -44,6 +50,7 @@ def opt_language():
     )
 
 
+# TODO: Get shell completion working.
 def opt_language_completion():
     """
     Get a list of programming languages for completion.
@@ -60,6 +67,10 @@ def opt_multiline():
         "-m",
         help="Use a multiline comment block. Not supported for some languages.",
     )
+
+
+def opt_copy_to_clipboard():
+    return typer.Option("--clipboard", "-c", help="Copy output to the clipboard.")
 
 
 @app.command()
@@ -82,9 +93,10 @@ def figlet(
     font: Annotated[str, opt_font()] = "cybermedium",
     language: Annotated[str, opt_language()] = "python",
     multiline: Annotated[bool, opt_multiline()] = False,
+    copy_to_clipboard: Annotated[bool, opt_copy_to_clipboard()] = False,
 ):
 
-    output = do_figlet(text, font, language, multiline)
+    output = do_figlet(text, font, language, multiline, copy_to_clipboard)
     typer.echo(output)
 
 
