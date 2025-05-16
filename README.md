@@ -1,10 +1,10 @@
-#cwrap-python
+#cwrap-(py)thon
 
 ``` shell
-# ____ _ _ _ ____ ____ ___  ___  _   _ 
-# |    | | | |__/ |__| |__] |__]  \_/  
-# |___ |_|_| |  \ |  | |    |      |   
-#                                      
+# ____ _ _ _ ____ ____ ___     ___  _   _ 
+# |    | | | |__/ |__| |__] __ |__]  \_/  
+# |___ |_|_| |  \ |  | |       |      |   
+#                                         
 ```
 
 `cwrap(py)`, written in `(py)`thon. Nothing more than a handy file comment header utility that helps easily me see (with my old eyes) what file I am working on.  
@@ -17,12 +17,14 @@ Clone the `repo`:
 git clone https://github.com/TylerDurham/cwrap-python
 ```
 
-I like to use `uv`:
+I like to use `uv` to build and install:
 
 ``` shell
 uv build
 uv tool install dist/cwrap-py*.whl  
 ```
+
+**Note:** Shell completions can be added by running `cwrap-py --install-completion`
 
 To remove, run `uv tool uninstall cwrap-py`.
 
