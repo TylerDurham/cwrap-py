@@ -21,7 +21,7 @@ I like to use `uv`:
 
 ``` shell
 uv build
-uv tool install dist/cwrap-py*  
+uv tool install dist/cwrap-py*.whl  
 ```
 
 To remove, run `uv tool uninstall cwrap-py`.
