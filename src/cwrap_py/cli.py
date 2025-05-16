@@ -10,7 +10,7 @@ import typer
 from rich.panel import Panel
 from rich.table import Table
 
-from cwrappy.core import do_figlet, get_languages  # do_figlet, get_languages
+from cwrap_py.core import do_figlet, get_languages  # do_figlet, get_languages
 
 app = typer.Typer()
 
@@ -100,9 +100,9 @@ def figlet(
     typer.echo(output)
 
 
-def main():
+def run():
     app()
 
 
 if __name__ == "__main__":
-    main()
+    run()

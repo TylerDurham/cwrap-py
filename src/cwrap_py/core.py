@@ -6,7 +6,7 @@
 from pyfiglet import Figlet
 from pyperclip import copy
 
-from cwrappy.languages import LANGUAGES, get_comment_chars
+from cwrap_py.languages import LANGUAGES, get_comment_chars
 
 
 def do_figlet(

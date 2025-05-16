@@ -1,10 +1,10 @@
-#cwrap-python
+#cwrap-(py)thon
 
 ``` shell
-# ____ _ _ _ ____ ____ ___  ___  _   _ 
-# |    | | | |__/ |__| |__] |__]  \_/  
-# |___ |_|_| |  \ |  | |    |      |   
-#                                      
+# ____ _ _ _ ____ ____ ___     ___  _   _ 
+# |    | | | |__/ |__| |__] __ |__]  \_/  
+# |___ |_|_| |  \ |  | |       |      |   
+#                                         
 ```
 
 `cwrap(py)`, written in `(py)`thon. Nothing more than a handy file comment header utility that helps easily me see (with my old eyes) what file I am working on.  
@@ -17,13 +17,16 @@ Clone the `repo`:
 git clone https://github.com/TylerDurham/cwrap-python
 ```
 
-I like to use `pipx`:
+I like to use `uv` to build and install:
 
 ``` shell
-pipx install .  
+uv build
+uv tool install dist/cwrap-py*.whl  
 ```
 
-To remove, run `pipx uninstall cwrappy`.
+**Note:** Shell completions can be added by running `cwrap-py --install-completion`
+
+To remove, run `uv tool uninstall cwrap-py`.
 
 # Usage
 
@@ -133,10 +136,26 @@ cwrappy figlet "Hello, Clipboard" -c
 
 # Local Development
 
+## Using UV
+
 Clone the `repo`:
 
 ``` shell
-git clone https://github.com/TylerDurham/cwrap-python
+git clone https://github.com/TylerDurham/cwrap-python && cd cwrap-python
+```
+
+Run the project locally:
+
+``` shell
+uvx . figlet "Hello"
+```
+
+## Using Pip
+
+Clone the `repo`:
+
+``` shell
+git clone https://github.com/TylerDurham/cwrap-python && cd cwrap-python
 ```
 
 Create the `python` virtual environment:
