@@ -17,13 +17,14 @@ Clone the `repo`:
 git clone https://github.com/TylerDurham/cwrap-python
 ```
 
-I like to use `pipx`:
+I like to use `uv`:
 
 ``` shell
-pipx install .  
+uv build
+uv tool install dist/cwrap-py*  
 ```
 
-To remove, run `pipx uninstall cwrappy`.
+To remove, run `uv tool uninstall cwrap-py`.
 
 # Usage
 
@@ -133,10 +134,26 @@ cwrappy figlet "Hello, Clipboard" -c
 
 # Local Development
 
+## Using UV
+
 Clone the `repo`:
 
 ``` shell
-git clone https://github.com/TylerDurham/cwrap-python
+git clone https://github.com/TylerDurham/cwrap-python && cd cwrap-python
+```
+
+Run the project locally:
+
+``` shell
+uvx . figlet "Hello"
+```
+
+## Using Pip
+
+Clone the `repo`:
+
+``` shell
+git clone https://github.com/TylerDurham/cwrap-python && cd cwrap-python
 ```
 
 Create the `python` virtual environment:
