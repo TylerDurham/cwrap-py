@@ -1,0 +1,2 @@
+uv build
+uv tool install dist/cwrap*.whl --force
