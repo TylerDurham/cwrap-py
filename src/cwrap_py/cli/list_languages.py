@@ -21,7 +21,7 @@ def opt_list():
 
 def execute(list: bool = False):
     # print(f"LANGUAGES! -l {list}")
-    languages = sorted(lng.get_languages())
+    languages = dict(sorted(lng.get_languages().items()))
 
     if list:
         for key in languages:
