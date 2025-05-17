@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [project.scripts]
-cwrap-py = "cwrap_py:main"
+cwrap = "cwrap_py:main"
 
 [build-system]
 requires = ["hatchling"]
