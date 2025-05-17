@@ -8,6 +8,10 @@ from cwrap_py.core import fonts as fnt
 app = typer.Typer()
 
 
+def opt_font_completion():
+    return fnt.get_fonts()
+
+
 def opt_list():
     return Annotated[
         bool,

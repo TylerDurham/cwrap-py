@@ -3,6 +3,8 @@ from typing import Annotated
 import typer
 
 from cwrap_py.core import figlet as fig
+from cwrap_py.core import fonts as fnt
+from cwrap_py.core import languages as lng
 
 app = typer.Typer()
 
@@ -17,9 +19,13 @@ def opt_font():
             "--font",
             "-f",
             help="The figlet font to use.",
-            # autocompletion=opt_font_completion,
+            autocompletion=opt_font_completion,
         ),
     ]
+
+
+def opt_font_completion():
+    return fnt.get_fonts()
 
 
 def opt_language():
@@ -32,9 +38,14 @@ def opt_language():
             "--language",
             "-l",
             help="The language for the comments.",
-            # autocompletion=opt_language_completion,
+            autocompletion=opt_language_completion,
         ),
     ]
+
+
+def opt_language_completion():
+    languages = sorted(lng.get_languages())
+    return languages
 
 
 def opt_multiline():
