@@ -1,7 +1,5 @@
-__version__ = "0.1.1"
-
-from cwrap_py import cli
+from cwrap_py.cli.main import main as run
 
 
 def main():
-    cli.run()
+    run()
