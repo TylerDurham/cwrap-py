@@ -10,3 +10,6 @@ rm ~/.zfunc/$NAME*
 
 echo "Uninstalling globally..."
 uv tool uninstall $NAME
+
+rm ~/.local/bin/cwrap
+rm -rf ~/.local/share/uv/tools/cwrap-py
