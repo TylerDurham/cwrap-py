@@ -76,14 +76,11 @@ def opt_rule():
     """
     Gets the settings for the horizontal rule option.
     """
-    return Annotated[
-        str,
-        typer.Option(
-            "--hr-style",
-            help="Add a horizontal rule to the top and bottom of the output.",
-            autocompletion=opt_rule_completion,
-        ),
-    ]
+    return typer.Option(
+        "--hr-width",
+        help="Add a horizontal rule to the top and bottom of the output.",
+        autocompletion=opt_rule_completion,
+    )
 
 
 def opt_rule_completion():
