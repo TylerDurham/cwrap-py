@@ -1,2 +1,12 @@
+#!/usr/bin/env zsh
+
+NAME=cwrap
+
+echo "Removing build artifacts..."
 rm -rf *.tmp
 rm -rf dist
+echo "Removing shell completion scripts..."
+rm ~/.zfunc/$NAME*
+
+echo "Uninstalling globally..."
+uv tool uninstall $NAME

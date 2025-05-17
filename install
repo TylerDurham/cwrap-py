@@ -1,2 +1,8 @@
+#!/usr/bin/env zsh
+
+NAME=cwrap
+
+echo "Building $NAME..."
 uv build
-uv tool install dist/cwrap*.whl --force
+uv tool install dist/$NAME*.whl --force
+ eval "$NAME --install-completion"
