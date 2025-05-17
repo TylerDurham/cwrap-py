@@ -21,12 +21,15 @@ I like to use `uv` to build and install:
 
 ``` shell
 uv build
-uv tool install dist/cwrap-py*.whl  
 ```
 
-**Note:** Shell completions can be added by running `cwrap-py --install-completion`
+``` shell
+uv tool install dist/cwrap*.whl  
+```
 
-To remove, run `uv tool uninstall cwrap-py`.
+**Note:** Shell completions can be added by running `cwrap --install-completion`
+
+To remove, run `uv tool uninstall cwrap`.
 
 # Usage
 
@@ -37,7 +40,7 @@ To remove, run `uv tool uninstall cwrap-py`.
 Get help:
 
 ``` shell
-cwrappy --help
+cwrap --help
 ```
 
 ### Programming Languages
@@ -45,7 +48,7 @@ cwrappy --help
 List supported languages:
 
 ``` shell
-cwrappy list-languages
+cwrap list-languages
 ```
 
 ### Figlets
@@ -55,7 +58,7 @@ cwrappy list-languages
 Generate a simple comment wrapped figlet header:
 
 ``` shell
-cwrappy figlet "Hello World"
+cwrap figlet "Hello World"
 ```
 This will output:
 
@@ -73,7 +76,7 @@ This will output:
 To generate a simple comment wrapped figlet header with a *specific figlet font*, use the `-f` or `--font` option:
 
 ``` shell
-cwrappy figlet -f avatar "Hello World"
+cwrap figlet -f avatar "Hello World"
 ```
 This will output:
 
@@ -91,7 +94,7 @@ This will output:
 You can also wrap with different programming languages:
 
 ``` shell
-cwrappy figlet -l lua "UPDATE TABLE"
+cwrap figlet -l lua "UPDATE TABLE"
 ```
 
 This will output:
@@ -103,14 +106,14 @@ This will output:
 --                                                         
 ```
 
-**Note:** You can run `cwrappy list-languages` to get a list of supported programming languages.
+**Note:** You can run `cwrap list-languages` to get a list of supported programming languages.
 
 #### Multiline Comments
 
 If the programming language supports it, you can specify the `-m` or `--multiline` option to wrap the figlet text in a multiline comment:
 
 ``` shell
-cwrappy figlet -f avatar -l javascript -m "Hello World"
+cwrap figlet -f avatar -l javascript -m "Hello World"
 ```
 This will output:
 
@@ -131,7 +134,7 @@ This will output:
 You can place the generated text on the clipboard by specifying the `-c` option:
 
 ``` shell
-cwrappy figlet "Hello, Clipboard" -c
+cwrap figlet "Hello, Clipboard" -c
 ```
 
 # Local Development
