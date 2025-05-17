@@ -20,11 +20,12 @@ def figlet(
     language: fig.opt_language() = "python",
     multiline: fig.opt_multiline() = False,
     clipboard: fig.opt_clipboard() = False,
+    hr_style: fig.opt_rule() = "regular",
 ):
     """
     Generates a simple comment wrapped figlet header.
     """
-    fig.execute(text, font, language, multiline, clipboard)
+    fig.execute(text, font, language, multiline, clipboard, hr_style)
 
 
 @app.command("list-fonts")

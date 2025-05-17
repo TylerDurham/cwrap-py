@@ -72,7 +72,25 @@ def opt_clipboard():
     ]
 
 
-def execute(text, font, language, multiline, clipboard):
+def opt_rule():
+    """
+    Gets the settings for the horizontal rule option.
+    """
+    return Annotated[
+        str,
+        typer.Option(
+            "--hr-style",
+            help="Add a horizontal rule to the top and bottom of the output.",
+            autocompletion=opt_rule_completion,
+        ),
+    ]
+
+
+def opt_rule_completion():
+    return ["regular", "thick", "thin"]
+
+
+def execute(text, font, language, multiline, clipboard, hr_style):
     # print(f"FIGLET! {text} -f {font} -l {language} -m {multiline} -c {clipboard}")
-    output = fig.get_figlet(text, font, language, multiline, clipboard)
+    output = fig.get_figlet(text, font, language, multiline, clipboard, hr_style)
     print("\n".join(output))

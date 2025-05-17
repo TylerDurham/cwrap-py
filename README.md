@@ -126,6 +126,26 @@ This will output:
  \_/ \|\____\\____/\____/\____/  \_/  \|\____/\_/\_\\____/\____/
                                                                 
 */
+```
+#### Horizontal Rules
+
+You can add a horizontal rule at the top and bottom of the comment by specifying the `--hr-width` option:
+
+``` shell
+cwrap figlet "Hello, HR" -l javascript --hr-width
+```
+
+This will output:
+
+``` javascript
+/*
+ ======================================
+ _  _ ____ _    _    ____    _  _ ____ 
+ |__| |___ |    |    |  |    |__| |__/ 
+ |  | |___ |___ |___ |__|    |  | |  \ 
+                                       
+ ======================================
+*/
 
 ```
 
