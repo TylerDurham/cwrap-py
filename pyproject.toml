@@ -1,7 +1,7 @@
 [project]
 name = "cwrap-py"
 version = "0.1.0"
-description = "Add your description here"
+description = "cwrap(py), written in (py)thon. Nothing more than a handy file comment header utility that helps easily me see (with my old eyes) what file I am working on."
 readme = "README.md"
 authors = [
     { name = "TylerDurham", email = "TylerDurham@users.noreply.github.com" }
@@ -20,3 +20,16 @@ cwrap = "cwrap_py:main"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
+]
