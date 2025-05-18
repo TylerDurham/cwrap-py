@@ -4,8 +4,6 @@
 # |___ |___ | /   |  | |  | | | \|
 #
 # =========================================================================
-from typing import Literal
-
 import typer
 
 from cwrap_py.cli import figlet as fig
@@ -18,11 +16,11 @@ app = typer.Typer()
 @app.command()
 def figlet(
     text: str,
-    hr_style: Literal["thick", "thin", "regular"],
     font: fig.opt_font() = "cybermedium",
     language: fig.opt_language() = "python",
     multiline: fig.opt_multiline() = False,
     clipboard: fig.opt_clipboard() = False,
+    hr_style: fig.opt_rule() = "regular",
 ):
     """
     Generates a simple comment wrapped figlet header.

@@ -53,6 +53,7 @@ li_shell = LanguageInfo(
     multiline_comment_chars=None,
 )
 
+LANGUAGES["sh"] = li_shell
 LANGUAGES["bash"] = li_shell
 LANGUAGES["zsh"] = li_shell
 
