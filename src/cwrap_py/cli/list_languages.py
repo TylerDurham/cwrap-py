@@ -1,6 +1,8 @@
 from typing import Annotated
 
 import rich
+import rich.panel
+import rich.table
 import typer
 
 from cwrap_py.core import languages as lng
@@ -8,15 +10,14 @@ from cwrap_py.core import languages as lng
 app = typer.Typer()
 
 
-def opt_list():
-    return Annotated[
-        bool,
-        typer.Option(
-            "--list",
-            "-l",
-            help="List the available languages as a plain list instead of a table.",
-        ),
-    ]
+opt_list = Annotated[
+    bool,
+    typer.Option(
+        "--list",
+        "-l",
+        help="List the available languages as a plain list instead of a table.",
+    ),
+]
 
 
 def execute(list: bool = False):

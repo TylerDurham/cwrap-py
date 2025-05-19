@@ -30,7 +30,7 @@ def get_figlet(
     language: str,
     multiline: bool = False,
     clipboard: bool = False,
-    hr_style: str = None,
+    hr_style: str = "",
 ):
     # Force to lowercase
     language = str.lower(language)
@@ -59,13 +59,13 @@ def get_figlet(
         output.append(opening_comment_chars)  # Go ahead and write to ouput buffer
         comment_chars = ""  # We no longer will use this.
 
-    if not hr_style == None:
+    if not hr_style == "":
         print_rule(output, comment_chars, hr_style, hr_width)
 
     for line in lines:
         output.append(f"{comment_chars} {line}")
 
-    if not hr_style == None:
+    if not hr_style == "":
         print_rule(output, comment_chars, hr_style, hr_width)
 
     if has_multiline_comment_chars == True and multiline == True:
