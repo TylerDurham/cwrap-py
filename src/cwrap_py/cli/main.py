@@ -16,11 +16,11 @@ app = typer.Typer()
 @app.command()
 def figlet(
     text: str,
-    font: fig.opt_font() = "cybermedium",
-    language: fig.opt_language() = "python",
-    multiline: fig.opt_multiline() = False,
-    clipboard: fig.opt_clipboard() = False,
-    hr_style: fig.opt_rule() = "regular",
+    font: fig.opt_font = "cybermedium",
+    language: fig.opt_language = "python",
+    multiline: fig.opt_multiline = False,
+    clipboard: fig.opt_clipboard = False,
+    hr_style: fig.opt_hr_style = "",
 ):
     """
     Generates a simple comment wrapped figlet header.
@@ -29,7 +29,7 @@ def figlet(
 
 
 @app.command("list-fonts")
-def fonts(list: fnt.opt_list() = False):
+def list_fonts(list: fnt.opt_list = False):
     """
     List all available figlet fonts.
     """
@@ -37,7 +37,7 @@ def fonts(list: fnt.opt_list() = False):
 
 
 @app.command("list-languages")
-def list_languages(list: lng.opt_list() = False):
+def list_languages(list: lng.opt_list = False):
     """
     Lists all available languages.
     """

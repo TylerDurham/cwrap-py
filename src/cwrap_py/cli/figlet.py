@@ -9,38 +9,19 @@ from cwrap_py.core import languages as lng
 app = typer.Typer()
 
 
-def opt_font():
-    """
-    Get the settings for the font option.
-    """
-    return Annotated[
-        str,
-        typer.Option(
-            "--font",
-            "-f",
-            help="The figlet font to use.",
-            autocompletion=opt_font_completion,
-        ),
-    ]
-
-
 def opt_font_completion():
     return fnt.get_fonts()
 
 
-def opt_language():
-    """
-    Gets the settings for the language option.
-    """
-    return Annotated[
-        str,
-        typer.Option(
-            "--language",
-            "-l",
-            help="The language for the comments.",
-            autocompletion=opt_language_completion,
-        ),
-    ]
+opt_font = Annotated[
+    str,
+    typer.Option(
+        "--font",
+        "-f",
+        help="The figlet font to use.",
+        autocompletion=opt_font_completion,
+    ),
+]
 
 
 def opt_language_completion():
@@ -48,43 +29,46 @@ def opt_language_completion():
     return languages
 
 
-def opt_multiline():
-    """
-    Gets the settings for the multiline option.
-    """
-    return Annotated[
-        bool,
-        typer.Option(
-            "--multiline",
-            "-m",
-            help="Use a multiline comment block. Not supported for some languages.",
-        ),
-    ]
+opt_language = Annotated[
+    str,
+    typer.Option(
+        "--language",
+        "-l",
+        help="The language for the comments.",
+        autocompletion=opt_language_completion,
+    ),
+]
 
 
-def opt_clipboard():
-    """
-    Gets the settings for the copy to clipboard option.
-    """
-    return Annotated[
-        bool,
-        typer.Option("--clipboard", "-c", help="Copy the output to the clipboard."),
-    ]
+opt_multiline = Annotated[
+    bool,
+    typer.Option(
+        "--multiline",
+        "-m",
+        help="Use a multiline comment block. Not supported for some languages.",
+    ),
+]
 
 
-def opt_rule():
-    """
-    Gets the settings for the horizontal rule option.
-    """
-    return typer.Option(
-        "--hr-width",
-        help="Add a horizontal rule to the top and bottom of the output.",
-        autocompletion=opt_rule_completion,
-    )
+opt_clipboard = Annotated[
+    bool,
+    typer.Option("--clipboard", "-c", help="Copy the output to the clipboard."),
+]
 
 
 def opt_rule_completion():
     return ["regular", "thick", "thin"]
+
+
+opt_hr_style = Annotated[
+    str,
+    typer.Option(
+        "-r",
+        "--hr-style",
+        help="Add a horizontal rule to the top and bottom of the output. [ thin | thick | regular ].",
+        autocompletion=opt_rule_completion,
+    ),
+]
 
 
 def execute(text, font, language, multiline, clipboard, hr_style):

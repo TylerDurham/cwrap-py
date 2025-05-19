@@ -1,6 +1,8 @@
 from typing import Annotated
 
 import rich
+import rich.panel
+import rich.table
 import typer
 
 from cwrap_py.core import fonts as fnt
@@ -12,15 +14,14 @@ def opt_font_completion():
     return fnt.get_fonts()
 
 
-def opt_list():
-    return Annotated[
-        bool,
-        typer.Option(
-            "--list",
-            "-l",
-            help="List the available fonts as a plain list instead of a table.",
-        ),
-    ]
+opt_list = Annotated[
+    bool,
+    typer.Option(
+        "--list",
+        "-l",
+        help="List the available fonts as a plain list instead of a table.",
+    ),
+]
 
 
 def execute(list: bool = False):

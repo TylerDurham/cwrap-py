@@ -167,10 +167,22 @@ Clone the `repo`:
 git clone https://github.com/TylerDurham/cwrap-python && cd cwrap-python
 ```
 
+Create venv:
+
+``` shell
+uv venv
+```
+
+Run tests:
+
+``` shell
+uv run pytest
+```
+
 Run the project locally:
 
 ``` shell
-uvx . figlet "Hello"
+uv run cwrap figlet "Hello"
 ```
 
 ## Using Pip
