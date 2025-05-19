@@ -7,6 +7,8 @@
 #                                         
 ```
 
+Version:  0.2.7
+
 `cwrap(py)`, written in `(py)`thon. Nothing more than a handy file comment header utility that helps easily me see (with my old eyes) what file I am working on.  
 
 # Install

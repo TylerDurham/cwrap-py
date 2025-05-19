@@ -4,6 +4,7 @@
 # |___ |___ | /   |  | |  | | | \|
 #
 # =========================================================================
+import toml
 import typer
 
 from cwrap_py.cli import figlet as fig
@@ -42,6 +43,15 @@ def list_languages(list: lng.opt_list = False):
     Lists all available languages.
     """
     lng.execute(list)
+
+
+@app.command("version")
+def version():
+    """
+    Show the version.
+    """
+    data = toml.load("pyproject.toml")
+    print(data["project"]["version"])
 
 
 def main():
