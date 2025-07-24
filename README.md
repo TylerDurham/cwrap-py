@@ -31,7 +31,12 @@ uv tool install dist/cwrap*.whl
 
 **Note:** Shell completions can be added by running `cwrap --install-completion`
 
-To remove, run `uv tool uninstall cwrap`.
+To remove, run `uv tool uninstall cwrap`. You can also force delete with:
+
+``` shell
+rm -rf ~/.local/cwrwap
+rm -rf ~/.local/share/uv/tools/cwrap-py
+```
 
 # Usage
 

@@ -49,12 +49,13 @@ wheels = [
 
 [[package]]
 name = "cwrap-py"
-version = "0.2.6"
+version = "0.2.7"
 source = { editable = "." }
 dependencies = [
     { name = "pyfiglet" },
     { name = "pyperclip" },
     { name = "rich" },
+    { name = "toml" },
     { name = "typer" },
 ]
 
@@ -70,6 +71,7 @@ requires-dist = [
     { name = "pyfiglet", specifier = ">=1.0.2" },
     { name = "pyperclip", specifier = ">=1.9.0" },
     { name = "rich", specifier = ">=14.0.0" },
+    { name = "toml", specifier = ">=0.10.2" },
     { name = "typer", specifier = ">=0.15.4" },
 ]
 
